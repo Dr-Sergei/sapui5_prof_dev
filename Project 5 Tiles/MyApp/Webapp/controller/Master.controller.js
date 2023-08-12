@@ -10,30 +10,30 @@ sap.ui.define([
             var oData = {
                 names: [
                     {
-                        Id: 1,
+                        icon: "sap-icon://sap-ui5",
                         Name: "Dinosaurs",
                         Place: "Mountains",
                     },
                     {
-                        Id: 2,
+                        icon: "sap-icon://general-leave-request",
                         Name: "Elephant",
                         Place: "Forest",
                     },
                     {
-                        Id: 3,
+                        icon: "sap-icon://map-2",
                         Name: "Whale",
                         Place: "Sea",
                     },
                     {
-                        Id: 4,
+                        icon: "sap-icon://travel-expense",
                         Name: "Duck",
                         Place: "Water",
                     },
-                    {
-                        Id: 5,
-                        Name: "Monkey",
-                        Place: "Tree",
-                    },
+                    // {
+                    //     icon: 5,
+                    //     Name: "Monkey",
+                    //     Place: "Tree",
+                    // },
                 ],
             };
 
