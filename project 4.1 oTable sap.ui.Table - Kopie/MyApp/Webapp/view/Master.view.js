@@ -12,9 +12,8 @@ sap.ui.jsview("sapui5.demo.mvcapp.view.Master", {
                 text: "Name"
             }),
             template: new sap.m.Text({
-                text: "Name: {Name}"
+                text: "{Name}" // Corrected typo: "Name: {Name}" to "{Name}"
             })
-
         });
 
         var oCol2 = new sap.ui.table.Column({
@@ -22,7 +21,7 @@ sap.ui.jsview("sapui5.demo.mvcapp.view.Master", {
                 text: "Place"
             }),
             template: new sap.m.Text({
-                text: "Place: {Place}"
+                text: "{Place}" // Corrected typo: "Place: {Place}" to "{Place}"
             })
         });
 
@@ -31,11 +30,11 @@ sap.ui.jsview("sapui5.demo.mvcapp.view.Master", {
                 text: "Id"
             }),
             template: new sap.m.Text({
-                text: "Id: {Id}"
+                text: "{Id}" // Corrected typo: "Id: {Id}" to "{Id}"
             })
         });
 
-        var oTable = new sap.ui.table.Table({ // Corrected typo: "Tabele" to "Table"
+        var oTable = new sap.ui.table.Table({
             title: "Simple Table",
             columns: [
                 oCol1,
@@ -44,10 +43,10 @@ sap.ui.jsview("sapui5.demo.mvcapp.view.Master", {
             ]
         });
 
-        oTable.bindItems({
-            path: "/names",
-            template: oTemp
+        oTable.bindRows({
+            path: "/names"
         });
+
         var oPage = new sap.m.Page({
             title: "Table",
             content: [
@@ -57,6 +56,5 @@ sap.ui.jsview("sapui5.demo.mvcapp.view.Master", {
 
         return oPage;
         // =======================================================================================================================
-
-    },
+    }
 });
