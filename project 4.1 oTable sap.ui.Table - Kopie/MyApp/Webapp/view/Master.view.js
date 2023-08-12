@@ -7,44 +7,40 @@ sap.ui.jsview("sapui5.demo.mvcapp.view.Master", {
         // Here we will create our UI via JS coding
         // =======================================================================================================================
 
-        var oCol1 = new sap.m.Column({
-            header: new sap.m.Label({
+        var oCol1 = new sap.ui.table.Column({
+            label: new sap.m.Label({
                 text: "Name"
+            }),
+            template: new sap.m.Text({
+                text: "Name: {Name}"
             })
+
         });
 
-        var oCol2 = new sap.m.Column({
-            header: new sap.m.Label({
+        var oCol2 = new sap.ui.table.Column({
+            label: new sap.m.Label({
                 text: "Place"
+            }),
+            template: new sap.m.Text({
+                text: "Place: {Place}"
             })
         });
 
-        var oCol3 = new sap.m.Column({
-            header: new sap.m.Label({
+        var oCol3 = new sap.ui.table.Column({
+            label: new sap.m.Label({
                 text: "Id"
+            }),
+            template: new sap.m.Text({
+                text: "Id: {Id}"
             })
         });
 
-        var oTable = new sap.m.Table({ // Corrected typo: "Tabele" to "Table"
+        var oTable = new sap.ui.table.Table({ // Corrected typo: "Tabele" to "Table"
             title: "Simple Table",
             columns: [
                 oCol1,
                 oCol2,
                 oCol3
-            ]
-        });
-
-        var oTemp = new sap.m.ColumnListItem({
-            cells: [
-                new sap.m.Text({
-                    text: "{Name}"
-                }),
-                new sap.m.Text({
-                    text: "{Place}"
-                }),
-                new sap.m.Text({
-                    text: "{Id}"
-                })
             ]
         });
 
