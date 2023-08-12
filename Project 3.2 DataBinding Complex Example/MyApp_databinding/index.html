@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyUI5App</title>
+
+    <!-- https://127.0.0.1:5500/ -->
+
+    <script
+      id="sap-ui-bootstrap"
+      src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_fiori_3_dark"
+      data-sap-ui-libs="sap.m,sap.ui.layout"
+      data-sap-ui-compatVersion="edge"
+      data-sap-ui-resourceroots='{"sapui5.demo.mvcapp": "./webapp/"}'
+    ></script>
+
+    <script>
+      // Creating data
+      var oData = {
+        names: [
+          {
+            Name: "Dinosaurs",
+            Place: "Mountains",
+          },
+          {
+            Name: "Elephant",
+            Place: "Forest",
+          },
+          {
+            Name: "Whale",
+            Place: "Sea",
+          },
+          {
+            Name: "Duck",
+            Place: "Water",
+          },
+          {
+            Name: "Monkey",
+            Place: "Tree",
+          },
+        ],
+      };
+
+      var oModel = new sap.ui.model.json.JSONModel();
+
+      var oList = new sap.m.List({
+        headerText: "Animals",
+        items: [],
+      });
+
+      oList.bindItems({
+        path: "/names",
+        template: new sap.m.StandardListItem({
+          title: "{Name}",
+          description: "{Place}",
+        }),
+      });
+
+      // Assigning data to model and model to list
+      oModel.setData(oData);
+      oList.setModel(oModel);
+
+      // Creating a page here
+      var oPage = new sap.m.Page({
+        title: "List Page",
+        content: [oList], // Add the list to the content
+      });
+
+      var oApp = new sap.m.App({
+        pages: [oPage],
+      }).placeAt("content");
+
+      // Note: You might want to add more content or modify as needed.
+    </script>
+  </head>
+  <body class="sapUiBody" role="application">
+    <div id="content" class="sapUiResponsiveMargin"></div>
+    <div id="content1" class="sapUiResponsiveMargin"></div>
+  </body>
+</html>

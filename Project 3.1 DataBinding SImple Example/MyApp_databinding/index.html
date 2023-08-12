@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyUI5App</title>
+
+    <!-- https://127.0.0.1:5500/ -->
+
+    <script
+      id="sap-ui-bootstrap"
+      src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_fiori_3_dark"
+      data-sap-ui-libs="sap.m,sap.ui.layout"
+      data-sap-ui-compatVersion="edge"
+      data-sap-ui-resourceroots='{"sapui5.demo.mvcapp": "./webapp/"}'
+    ></script>
+
+    <script>
+      var oLabel1 = new sap.m.Label({
+        text: "{/key1}",
+      });
+      var oLabel2 = new sap.m.Label({
+        text: "{/key2}",
+      });
+
+      var oData = {
+        key1: "Some Value1",
+        key2: "Some Value2",
+        key3: "Some Value3",
+      };
+
+      var oModel = new sap.ui.model.json.JSONModel();
+
+      oModel.setData(oData);
+
+      oLabel1.setModel(oModel);
+      oLabel2.setModel(oModel);
+
+      oLabel1.placeAt("content");
+      oLabel2.placeAt("content1");
+
+      //
+    </script>
+  </head>
+  <body class="sapUiBody" role="application">
+    <div id="content" class="sapUiResponsiveMargin"></div>
+    <dvi id="content1" class="sapUiResponsiveMargin"></dvi>
+  </body>
+</html>

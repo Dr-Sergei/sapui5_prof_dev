@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyUI5App</title>
+
+    <!-- https://127.0.0.1:5500/ -->
+
+    <script
+      id="sap-ui-bootstrap"
+      src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_bluecrystal"
+      data-sap-ui-libs="sap.m,sap.ui.layout"
+      data-sap-ui-compatVersion="edge"
+      data-sap-ui-resourceroots='{"sapui5.demo.mvcapp": "./webapp/"}'
+    ></script>
+
+    <script>
+      var oSimpleForm = new sap.ui.layout.form.SimpleForm({
+        content: [
+          new sap.m.Label({
+            text: "Simple Form",
+          }),
+          new sap.m.Input({
+            placeholder: "Simple Input",
+          }),
+          new sap.m.Button({
+            text: "Submit",
+            press: function () {
+              // Add your press event handler here
+            },
+          }),
+          new sap.m.RatingIndicator({
+            maxValue: 5, // Remove quotes for numerical values
+            value: 4.5,
+          }),
+          new sap.m.TextArea({
+            rows: 9, // Corrected attribute name to "rows"
+            cols: 10,
+            value: "Awesome Textarea",
+          }),
+          new sap.m.DatePicker({}),
+          new sap.ui.unified.FileUploader({}), <!-- Corrected typo: "uinified" to "unified" -->
+          new sap.m.Bar({
+            contentRight: [
+              new sap.m.Button({
+                text: "Right Side",
+              }),
+            ],
+          }),
+          new sap.m.VBox({
+            items: [
+              new sap.m.Button({
+                text: "VBox Btn1",
+              }),
+              new sap.m.Button({
+                text: "VBox Btn2",
+              }),
+            ],
+          }),
+          new sap.m.HBox({
+            items: [
+              new sap.m.Button({
+                text: "HBox Btn1",
+              }),
+              new sap.m.Button({
+                text: "HBox Btn2",
+              }),
+            ],
+          }),
+        ],
+      }).placeAt("content");
+    </script>
+
+    <!--
+  <script>
+    var oPageMasterView = sap.ui.view("masterPage", {
+      type: sap.ui.core.mvc.ViewType.JS,
+      viewName: "sapui5.demo.mvcapp.view.Master",
+    });
+
+    var oPageDetail = sap.ui.view("detailPage", {
+      type: sap.ui.core.mvc.ViewType.JS,
+      viewName: "sapui5.demo.mvcapp.view.Detail",
+    });
+
+    // Creating an App
+    var oApp = new sap.m.App({
+      initialPage: "masterPage", // Corrected typo: "initialpage" to "initialPage"
+    });
+
+    oApp.addPage(oPageMasterView).addPage(oPageDetail);
+    oApp.placeAt("content");
+
+    //
+  </script>
+  --></head>
+  <body class="sapUiBody" role="application">
+    <div id="content" class="sapUiResponsiveMargin"></div>
+  </body>
+</html>
